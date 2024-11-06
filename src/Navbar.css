@@ -1,0 +1,214 @@
+/* Navbar Container */
+.navbar-container {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: 500;
+    border-bottom: 2px solid #e5e7eb; /* Add a bar below the navbar */
+}
+
+/* Logo Image */
+.navbar-logo img {
+    width: 144px; /* 36 * 4 */
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: none;
+    gap: 20px;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* Make Navbar Links visible for small and larger screens */
+@media (min-width: 640px) {
+    .navbar-links {
+        display: flex;
+    }
+}
+
+/* Individual Link Styling */
+.navbar-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #4a4a4a;
+    transition: color 0.3s;
+}
+
+/* Active Link Styling */
+.navbar-link.active {
+    color: black;
+}
+
+/* Hover Effects */
+.navbar-link:hover {
+    color: black;
+}
+
+/* Horizontal Line Under Link (Initially Hidden) */
+.navbar-link hr {
+    width: 50%;
+    border: none;
+    height: 1.5px;
+    background-color: #4a4a4a;
+    display: none;
+}
+
+/* Show the horizontal line when link is active or hovered */
+.navbar-link:hover hr,
+.navbar-link.active hr {
+    display: block;
+}
+
+/* Navbar Icons Container */
+.navbar-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Profile Icon, Cart Icon, Menu Icon */
+.navbar-profile-icon,
+.navbar-cart-icon,
+.navbar-menu-icon {
+    
+    width: 20px;
+    cursor: pointer;
+}
+
+/* Cart Item Count */
+.navbar-cart-count {
+    cursor: pointer;
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    width: 16px;
+    text-align: center;
+    line-height: 16px;
+    background-color: black;
+    color: white;
+    font-size: 8px;
+}
+
+/* Dropdown Menu */
+.navbar-dropdown-menu {
+    cursor: pointer;
+    display: none;
+    position:fixed;
+    right: auto; /* Remove right positioning */
+    left: auto; /* Position to the left */
+    padding-top: 10px;
+}
+
+/* Show dropdown on hover */
+.group:hover .navbar-dropdown-menu {
+    cursor: pointer;
+    display: block;
+    animation: slideDown 0.5s ease-out; /* Add slow-moving animation */
+}
+
+/* Dropdown Menu Content */
+.navbar-dropdown-menu-content {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    gap: 4px;
+    width: 120px;
+    padding: 5px 12px;
+    background-color: #f1f5f9;
+    color: #4a4a4a;
+    border-radius: 8px;
+    /* transform-origin: top left;  */
+}
+
+/* Animation keyframes for dropdown */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+/* Hamburger Menu Icon */
+.navbar-menu-icon {
+    width: 20px;
+    cursor: pointer;
+
+    /* Hide the menu icon for screens larger than 640px */
+    @media (min-width: 640px) {
+        display: none;
+    }
+}
+
+.navbar-dropdown-menu-content p:hover {
+    color: black;
+}
+
+/* Sidebar for Small Screens */
+.navbar-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Make sure it's on top */
+}
+
+/* Sidebar Open and Closed States */
+.navbar-sidebar-open {
+    width: 100%;
+}
+
+.navbar-sidebar-closed {
+    width: 0;
+}
+
+/* Ensure Sidebar is Hidden for Larger Screens */
+@media (min-width: 640px) {
+    .navbar-sidebar {
+        display: none; /* Hide the sidebar on larger screens */
+    }
+}
+
+/* Sidebar Content */
+.navbar-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    color: #4a4a4a;
+    height: 100%; /* Full height for the sidebar */
+}
+
+/* Sidebar Back Button */
+.navbar-sidebar-content-back {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* Sidebar Links */
+.navbar-sidebar-link {
+    padding: 8px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    text-decoration: none;
+    color: #4a4a4a;
+    transition: color 0.3s;
+}
+
+/* Sidebar Link Hover */
+.navbar-sidebar-link:hover {
+    color: black;
+}
